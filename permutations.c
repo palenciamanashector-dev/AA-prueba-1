@@ -27,7 +27,15 @@
 /***************************************************/
 int random_num(int inf, int sup)
 {
-  /* your code */
+  if (inf < 0 || inf >sup){
+    return ERR;
+  }
+
+  if ((sup-inf)> RAND_MAX){
+    return ERR;
+  } 
+
+  return inf +(rand() % (sup-inf +1));
 }
 
 /***************************************************/
@@ -45,7 +53,18 @@ int random_num(int inf, int sup)
 /***************************************************/
 int* generate_perm(int N)
 {
-  /* your code */
+ if(N<= 0){
+  return NULL;
+ }
+int i, rand_idx;
+ int *perm= (int*)malloc(N* sizeof(int));
+ if(perm == NULL){
+  return NULL;
+ }
+
+ for(i=0;i<N;i++){
+  rand_idx = 
+ }
 }
 
 /***************************************************/

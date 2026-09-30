@@ -8,7 +8,7 @@
  * Fecha: 16-09-2019
  *
  */
-
+#include <stdlib.h>
 #ifndef PERMUTATIONS_H
 #define PERMUTATIONS_H
 
