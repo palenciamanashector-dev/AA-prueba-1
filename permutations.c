@@ -51,16 +51,11 @@ int random_num(int inf, int sup)
 /* that contains the permitation                   */
 /* or NULL in case of error                        */
 /***************************************************/
+int generate_perm(int *perm, int N) {
+    int i, rand_idx, temp;
 
-int* generate_perm(int N) {
-    if (N <= 0) {
-        return NULL;
-    }
-    
-    int i, rand_idx;
-    int *perm = (int*)malloc(N * sizeof(int));
-    if (perm == NULL) {
-        return NULL;
+    if (perm == NULL || N <= 0) {
+        return ERR;
     }
 
     for (i = 0; i < N; i++) {
@@ -68,19 +63,14 @@ int* generate_perm(int N) {
     }
 
     for (i = 0; i < N; i++) {
-        rand_idx = random_num(i, N - 1);
-        
-        if (rand_idx == ERR) {
-            free(perm); 
-            return NULL;
-        }
-        
-        int temp = perm[i];
+        rand_idx = random_num_unbiased(i, N - 1);
+
+        temp = perm[i];
         perm[i] = perm[rand_idx];
         perm[rand_idx] = temp;
     }
 
-    return perm;
+    return OK;
 }
 
 /***************************************************/
