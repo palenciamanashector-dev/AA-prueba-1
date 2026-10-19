@@ -18,8 +18,10 @@
   #define ERR -1
   #define OK (!(ERR))
 #endif
-
+#include <stdio.h>
+#include <time.h>
 #include "sorting.h"
+#include "permutations.h"
 
 /* type definitions */
 typedef struct time_aa {
