@@ -103,7 +103,7 @@ int** generate_permutations(int n_perms, int N)
     }
 
     for (i = 0; i < n_perms; i++) {
-        perms[i] = generate_perm(N);
+        generate_perm(perms[i], N);
         
         if (perms[i] == NULL) {
             while (i > 0) { 
